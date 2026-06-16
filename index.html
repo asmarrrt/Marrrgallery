@@ -1,166 +1,294 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Marrr Gallery - Custom Jersey Printing Studio</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
---primary:#38BDF8;--secondary:#0EA5E9;--accent:#2563EB;--dark:#0F172A;--light:#F8FAFC;
-}
-*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
-body{font-family:Poppins,sans-serif;background:#fff;color:#334155}
-header{position:fixed;top:0;width:100%;z-index:1000;background:rgba(15,23,42,.85);backdrop-filter:blur(12px)}
-nav{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:16px 20px}
-.logo{font-family:"Bebas Neue";font-size:38px;color:#fff;letter-spacing:2px}
-nav ul{display:flex;gap:22px;list-style:none}
-nav a{color:#fff;text-decoration:none}
-.hero{min-height:100vh;background:linear-gradient(135deg,var(--primary),var(--accent));display:flex;align-items:center}
-.wrap{max-width:1200px;margin:auto;padding:0 20px}
-.hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
-.hero h1{font-family:"Bebas Neue";font-size:90px;line-height:.9;color:#fff}
-.hero p{color:#eef;margin:20px 0}
-.btn{display:inline-block;padding:14px 28px;background:#fff;color:var(--accent);text-decoration:none;border-radius:40px;font-weight:700}
-.mock{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);padding:30px;border-radius:30px;text-align:center;color:#fff}
-section{padding:90px 20px}
-.container{max-width:1200px;margin:auto}
-.title{text-align:center;margin-bottom:40px}
-.title h2{font-size:42px;color:var(--dark)}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.card{padding:25px;border-radius:20px;background:#fff;box-shadow:0 10px 30px rgba(0,0,0,.08);transition:.3s}
-.card:hover{transform:translateY(-8px)}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
-.num{font-size:42px;font-weight:700;color:var(--accent)}
-.gallery{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}
-.gallery img{width:380px;height:260px;object-fit:cover;border-radius:20px;scroll-snap-align:start}
-.gallery::-webkit-scrollbar{height:8px}
-.gallery::-webkit-scrollbar-thumb{background:var(--primary)}
-.cta{background:var(--dark);color:#fff;text-align:center;border-radius:30px;padding:60px 20px}
-footer{background:#020617;color:#fff;text-align:center;padding:30px}
-.wa{position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;padding:15px 20px;border-radius:50px;text-decoration:none}
-@media(max-width:768px){
-nav ul{display:none}
-.hero-grid{grid-template-columns:1fr}
-.hero h1{font-size:60px}
-.stats{grid-template-columns:repeat(2,1fr)}
-}
-  .logo img{
-    height:60px;
-    width:auto;
-    display:block;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Marrr Gallery | Custom Jersey Printing Studio</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header>
-<nav>
-<div class="logo">     <img src="pic/LOGO.png" alt="Marrr Gallery"> </div>
-<ul>
-<li><a href="#produk">Produk</a></li>
-<li><a href="#gallery">Gallery</a></li>
-<li><a href="#testi">Testimoni</a></li>
-<li><a href="#kontak">Kontak</a></li>
-</ul>
-</nav>
-</header>
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar">
 
-<section class="hero">
-<div class="wrap hero-grid">
-<div>
-<h1>CUSTOM<br>JERSEY<br>WITHOUT LIMITS</h1>
-<p>Spesialis jersey futsal, esports, basket, voli dan badminton dengan kualitas sublimasi HD.</p>
-<a class="btn" href="#gallery">Lihat Katalog</a>
-</div>
-<div class="mock">
-<h2>⚽ Jersey Premium</h2>
-<p>Full Printing • Custom Nama • Custom Nomor</p>
-</div>
-</div>
-</section>
+            <a href="#" class="logo">
+                <img src="pic/LOGO.png" alt="Marrr Gallery">
+            </a>
 
-<section>
-<div class="container">
-<div class="title"><h2>Kenapa Memilih Kami?</h2></div>
-<div class="cards">
-<div class="card">🔥 Desain Eksklusif</div>
-<div class="card">⚡ Produksi Cepat</div>
-<div class="card">🎨 Full Custom</div>
-<div class="card">🚚 Kirim Seluruh Indonesia</div>
-</div>
-</div>
-</section>
+            <ul class="nav-menu">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#produk">Produk</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#tentang">Tentang</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
 
-<section id="produk">
-<div class="container">
-<div class="title"><h2>Produk Unggulan</h2></div>
-<div class="cards">
-<div class="card">⚽ Jersey Futsal</div>
-<div class="card">🎮 Jersey Esports</div>
-<div class="card">🏀 Jersey Basket</div>
-<div class="card">🏐 Jersey Voli</div>
-</div>
-</div>
-</section>
+            <div class="menu-toggle">
+                ☰
+            </div>
 
-<section>
-<div class="container stats">
-<div><div class="num">2500+</div><p>Jersey Diproduksi</p></div>
-<div><div class="num">500+</div><p>Tim</p></div>
-<div><div class="num">98%</div><p>Puas</p></div>
-<div><div class="num">5+</div><p>Tahun</p></div>
-</div>
-</section>
+        </nav>
+    </header>
 
-<section id="gallery">
-<div class="container">
-<div class="title"><h2>Gallery Produksi</h2></div>
-<div class="gallery">
-<img src="https://picsum.photos/800/600?11">
-<img src="https://picsum.photos/800/600?12">
-<img src="https://picsum.photos/800/600?13">
-<img src="https://picsum.photos/800/600?14">
-<img src="https://picsum.photos/800/600?15">
-</div>
-</div>
-</section>
+    <!-- HERO -->
+    <section class="hero" id="home">
 
-<section id="testi">
-<div class="container">
-<div class="title"><h2>Testimoni</h2></div>
-<div class="cards">
-<div class="card">⭐⭐⭐⭐⭐ "Kualitas mantap!"</div>
-<div class="card">⭐⭐⭐⭐⭐ "Jersey tim kami keren."</div>
-<div class="card">⭐⭐⭐⭐⭐ "Pengiriman cepat."</div>
-</div>
-</div>
-</section>
+        <div class="hero-bg"></div>
 
-<section>
-<div class="container">
-<div class="cta" id="kontak">
-<h2>Siap Membuat Jersey Tim Anda?</h2>
-<p>Hubungi kami sekarang dan dapatkan desain gratis.</p><br>
-<a class="btn" href="#">Chat WhatsApp</a>
-</div>
-</div>
-</section>
+        <div class="container hero-container">
 
-<footer>
-© 2026 Marrr Gallery - Custom Jersey Printing Studio
-</footer>
+            <div class="hero-content">
 
-<a class="wa" href="#">WhatsApp</a>
+                <span class="badge">
+                    🔥 Premium Jersey Printing
+                </span>
 
-<script>
-const g=document.querySelector('.gallery');
-setInterval(()=>{
-g.scrollBy({left:400,behavior:'smooth'});
-if(g.scrollLeft+g.clientWidth>=g.scrollWidth-5){
-g.scrollTo({left:0,behavior:'smooth'});
-}
-},2500);
-</script>
+                <h1>
+                    CUSTOM JERSEY
+                    FOR CHAMPIONS
+                </h1>
+
+                <p>
+                    Marrr Gallery menghadirkan jersey
+                    berkualitas premium untuk futsal,
+                    esports, basket, voli dan badminton.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#gallery" class="btn-primary">
+                        Lihat Katalog
+                    </a>
+
+                    <a href="#kontak" class="btn-secondary">
+                        Pesan Sekarang
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="hero-image">
+
+                <img src="pic/hero-jersey.png" alt="Jersey">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- STATISTIC -->
+    <section class="stats">
+
+        <div class="container stats-grid">
+
+            <div class="stat-box">
+                <h2>2500+</h2>
+                <p>Jersey Diproduksi</p>
+            </div>
+
+            <div class="stat-box">
+                <h2>500+</h2>
+                <p>Tim</p>
+            </div>
+
+            <div class="stat-box">
+                <h2>98%</h2>
+                <p>Pelanggan Puas</p>
+            </div>
+
+            <div class="stat-box">
+                <h2>5+</h2>
+                <p>Tahun Pengalaman</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PRODUK -->
+    <section class="produk" id="produk">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Produk Unggulan</h2>
+                <p>Berbagai jenis jersey premium</p>
+            </div>
+
+            <div class="produk-grid">
+
+                <div class="produk-card">
+                    ⚽
+                    <h3>Jersey Futsal</h3>
+                </div>
+
+                <div class="produk-card">
+                    🎮
+                    <h3>Jersey Esports</h3>
+                </div>
+
+                <div class="produk-card">
+                    🏀
+                    <h3>Jersey Basket</h3>
+                </div>
+
+                <div class="produk-card">
+                    🏐
+                    <h3>Jersey Voli</h3>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery-section" id="gallery">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Gallery Produksi</h2>
+                <p>Hasil produksi terbaru</p>
+            </div>
+
+            <div class="gallery-slider">
+
+                <img src="pic/jersey1.jpg">
+                <img src="pic/jersey2.jpg">
+                <img src="pic/jersey3.jpg">
+                <img src="pic/jersey4.jpg">
+                <img src="pic/jersey5.jpg">
+                <img src="pic/jersey6.jpg">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PROSES -->
+    <section class="process">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Proses Pemesanan</h2>
+            </div>
+
+            <div class="process-grid">
+
+                <div class="process-item">
+                    <span>1</span>
+                    <h3>Konsultasi</h3>
+                </div>
+
+                <div class="process-item">
+                    <span>2</span>
+                    <h3>Desain</h3>
+                </div>
+
+                <div class="process-item">
+                    <span>3</span>
+                    <h3>Produksi</h3>
+                </div>
+
+                <div class="process-item">
+                    <span>4</span>
+                    <h3>Pengiriman</h3>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- TESTIMONI -->
+    <section class="testimoni">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Testimoni</h2>
+            </div>
+
+            <div class="testi-wrapper">
+
+                <div class="testi-card">
+                    ⭐⭐⭐⭐⭐
+                    <p>
+                        Jersey sangat bagus dan nyaman dipakai.
+                    </p>
+                </div>
+
+                <div class="testi-card">
+                    ⭐⭐⭐⭐⭐
+                    <p>
+                        Hasil cetak tajam dan pengerjaan cepat.
+                    </p>
+                </div>
+
+                <div class="testi-card">
+                    ⭐⭐⭐⭐⭐
+                    <p>
+                        Recommended untuk kebutuhan tim.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="kontak">
+
+        <div class="container">
+
+            <h2>
+                Siap Membuat Jersey Tim Anda?
+            </h2>
+
+            <p>
+                Hubungi kami sekarang dan dapatkan desain gratis.
+            </p>
+
+            <a href="https://wa.me/6281234567890" class="btn-primary">
+                Chat WhatsApp
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="container">
+
+            <img src="pic/LOGO.png" alt="Logo">
+
+            <h3>Marrr Gallery</h3>
+
+            <p>
+                Custom Jersey Printing Studio
+            </p>
+
+        </div>
+
+    </footer>
+
+    <script src="js/script.js"></script>
+
 </body>
 </html>
