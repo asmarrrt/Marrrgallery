@@ -43,18 +43,27 @@ header{
     background:rgba(15,23,42,.85);
     backdrop-filter:blur(10px);
 }
-
 .navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:0 30px; /* tambah jarak kiri-kanan */
     height:80px;
     display:flex;
     align-items:center;
     justify-content:space-between;
 }
 
-.logo img{
-    height:60px;
+.logo{
+    display:flex;
+    align-items:center;
+    padding-left:10px; /* dorong logo sedikit ke kanan */
 }
 
+.logo img{
+    height:60px;
+    width:auto;
+    display:block;
+}
 .nav-menu{
     display:flex;
     gap:30px;
