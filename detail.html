@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail - MarrrGallery</title>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#E63946",
+                        secondary: "#1D3557",
+                        darkbg: "#071A2F",
+                        card: "#0F2A44",
+                        light: "#F1FAEE"
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        .btn-primary {
+            @apply bg-primary text-light px-6 py-3 rounded-lg font-semibold transition-all hover:scale-105 hover:shadow-lg;
+        }
+        .btn-secondary {
+            @apply border-2 border-primary text-primary px-6 py-3 rounded-lg font-semibold transition-all hover:bg-primary hover:text-light;
+        }
+        .card-hover {
+            @apply bg-card rounded-lg p-4 transition-all hover:shadow-lg hover:translate-y-[-8px];
+        }
+        .navbar {
+            @apply bg-card border-b border-secondary sticky top-0 z-40;
+        }
+        .footer {
+            @apply bg-card border-t border-secondary mt-20 py-12;
+        }
+        .quantity-control {
+            @apply flex items-center gap-2 bg-secondary w-fit px-3 py-2 rounded;
+        }
+        .quantity-btn {
+            @apply w-8 h-8 flex items-center justify-center cursor-pointer hover:bg-primary rounded transition;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+                gap: 1.5rem;
+            }
+        }
+        .cart-badge {
+            @apply absolute top-[-8px] right-[-8px] bg-primary text-light rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold;
+        }
+    </style>
+</head>
+<body class="bg-darkbg text-light">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-3">
+                    <img src="logo-asmar.png" alt="MarrrGallery Logo" class="h-10">
+                    <span class="text-xl font-bold">MarrrGallery</span>
+                </div>
+
+                <div class="hidden md:flex gap-8">
+                    <a href="index.html" class="hover:text-primary transition">Home</a>
+                    <a href="products.html" class="hover:text-primary transition">Products</a>
+                    <a href="#" class="hover:text-primary transition">About</a>
+                    <a href="#" class="hover:text-primary transition">Contact</a>
+                </div>
+
+                <div class="flex items-center gap-6">
+                    <div class="relative cursor-pointer" onclick="window.location.href='cart.html'">
+                        <i class="fas fa-shopping-cart text-lg hover:text-primary transition"></i>
+                        <div class="cart-badge" id="cartBadge">0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="bg-secondary/30 py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-sm text-gray-400">
+                <a href="index.html" class="hover:text-primary">Home</a> /
+                <a href="products.html" class="hover:text-primary ml-1">Products</a> /
+                <span id="breadcrumbName" class="ml-1 text-light">Product</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Detail -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12" id="detailContent">
+                <div class="text-center py-20">
+                    <i class="fas fa-spinner fa-spin text-4xl text-primary"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="py-20 bg-gradient-to-b from-transparent to-secondary/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-light mb-12">Related Products</h2>
+            <div class="product-grid" id="relatedGrid"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <img src="logo-asmar.png" alt="MarrrGallery Logo" class="h-8">
+                        <h3 class="font-bold text-lg">MarrrGallery</h3>
+                    </div>
+                    <p class="text-gray-400">Premium custom jersey printing & DTF services</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-light mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="index.html" class="hover:text-primary transition">Home</a></li>
+                        <li><a href="products.html" class="hover:text-primary transition">Products</a></li>
+                        <li><a href="#" class="hover:text-primary transition">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-light mb-4">Support</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-primary transition">Contact</a></li>
+                        <li><a href="#" class="hover:text-primary transition">FAQ</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Returns</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-light mb-4">Follow Us</h3>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-gray-400 hover:text-primary transition"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition"><i class="fab fa-twitter text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-secondary pt-8 text-center text-gray-400">
+                <p>&copy; 2024 MarrrGallery. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        let currentProduct = null;
+        let quantity = 1;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = parseInt(urlParams.get('id'));
+
+            if (!productId) {
+                window.location.href = 'products.html';
+                return;
+            }
+
+            currentProduct = products.find(p => p.id === productId);
+
+            if (!currentProduct) {
+                window.location.href = '404.html';
+                return;
+            }
+
+            displayProductDetail();
+            displayRelatedProducts();
+            updateCartBadge();
+        });
+
+        function displayProductDetail() {
+            const content = document.getElementById('detailContent');
+            document.getElementById('breadcrumbName').textContent = currentProduct.name;
+
+            const badges = `
+                ${currentProduct.is_best_seller ? '<span class="inline-block bg-primary text-light px-3 py-1 rounded text-sm font-bold mr-2 mb-2">🌟 Best Seller</span>' : ''}
+                ${currentProduct.is_new_arrival ? '<span class="inline-block bg-green-500 text-light px-3 py-1 rounded text-sm font-bold mb-2">✨ New</span>' : ''}
+            `;
+
+            content.innerHTML = `
+                <div class="space-y-6">
+                    <img src="${currentProduct.image}" alt="${currentProduct.name}" class="w-full rounded-lg">
+                </div>
+                <div class="space-y-8">
+                    <div>
+                        <div class="mb-4">${badges}</div>
+                        <h1 class="text-4xl font-bold text-light mb-2">${currentProduct.name}</h1>
+                        <p class="text-gray-400 text-lg mb-4">${currentProduct.category}</p>
+                        <div class="flex items-center gap-4">
+                            <span class="text-4xl font-bold text-primary">Rp${formatPrice(currentProduct.price)}</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-card p-6 rounded-lg">
+                        <h3 class="text-lg font-bold text-light mb-4">Product Description</h3>
+                        <p class="text-gray-400 leading-relaxed">${currentProduct.description}</p>
+                    </div>
+
+                    <div class="bg-card p-6 rounded-lg space-y-4">
+                        <div>
+                            <label class="block text-sm font-bold text-light mb-3">Quantity</label>
+                            <div class="quantity-control">
+                                <button class="quantity-btn" onclick="decreaseQuantity()">
+                                    <i class="fas fa-minus text-light"></i>
+                                </button>
+                                <span id="quantityDisplay" class="text-lg font-bold w-8 text-center text-light">1</span>
+                                <button class="quantity-btn" onclick="increaseQuantity()">
+                                    <i class="fas fa-plus text-light"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <button onclick="addToCartDetail()" class="btn-primary w-full py-4 text-lg">
+                            <i class="fas fa-shopping-cart mr-2"></i> Add to Cart
+                        </button>
+                        <button onclick="buyNow()" class="btn-secondary w-full py-4 text-lg">
+                            <i class="fas fa-whatsapp mr-2"></i> Buy Now via WhatsApp
+                        </button>
+                    </div>
+
+                    <div class="bg-card p-4 rounded-lg space-y-4">
+                        <div class="flex gap-4">
+                            <div>
+                                <i class="fas fa-truck text-primary text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-light">Free Shipping</h4>
+                                <p class="text-gray-400 text-sm">For orders above Rp2.000.000</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div>
+                                <i class="fas fa-shield-alt text-primary text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-light">Secure Checkout</h4>
+                                <p class="text-gray-400 text-sm">Your payment is secure and protected</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function displayRelatedProducts() {
+            const related = products.filter(p => p.category === currentProduct.category && p.id !== currentProduct.id).slice(0, 4);
+            const grid = document.getElementById('relatedGrid');
+
+            grid.innerHTML = related.map(product => `
+                <div class="card-hover">
+                    <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-cover rounded mb-4">
+                    <h3 class="font-bold text-light mb-2">${product.name}</h3>
+                    <p class="text-primary font-bold text-lg mb-4">Rp${formatPrice(product.price)}</p>
+                    <button onclick="goToDetail(${product.id})" class="bg-primary text-light w-full py-2 rounded font-semibold hover:bg-red-700 transition">
+                        View Details
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        function formatPrice(price) {
+            return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        }
+
+        function increaseQuantity() {
+            quantity++;
+            document.getElementById('quantityDisplay').textContent = quantity;
+        }
+
+        function decreaseQuantity() {
+            if (quantity > 1) {
+                quantity--;
+                document.getElementById('quantityDisplay').textContent = quantity;
+            }
+        }
+
+        function addToCartDetail() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingItem = cart.find(item => item.id === currentProduct.id);
+
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                cart.push({ ...currentProduct, quantity: quantity });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartBadge();
+            showNotification(`${currentProduct.name} (x${quantity}) added to cart!`);
+            quantity = 1;
+            document.getElementById('quantityDisplay').textContent = quantity;
+        }
+
+        function buyNow() {
+            addToCartDetail();
+            setTimeout(() => {
+                window.location.href = 'cart.html';
+            }, 500);
+        }
+
+        function goToDetail(id) {
+            window.location.href = `detail.html?id=${id}`;
+        }
+
+        function updateCartBadge() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cartBadge').textContent = count;
+        }
+
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'fixed top-4 right-4 bg-green-500 text-light px-6 py-3 rounded shadow-lg z-50';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            setTimeout(() => notification.remove(), 3000);
+        }
+    </script>
+</body>
+</html>
