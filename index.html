@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarrrGallery - Custom Jersey & DTF Printing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6FCF97',
+                        secondary: '#2FA084',
+                        accent: '#1F6F5F',
+                        background: '#EEEEEE',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background font-sans">
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-lg">M</div>
+                    <span class="font-bold text-xl text-gray-800 hidden sm:inline">MarrrGallery</span>
+                </a>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-primary transition">Home</a>
+                    <a href="products.html" class="text-gray-700 hover:text-primary transition">Products</a>
+                    <a href="#categories" class="text-gray-700 hover:text-primary transition">Categories</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary transition">Contact</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <a href="cart.html" class="relative">
+                        <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                        <span id="cart-count" class="absolute -top-2 -right-2 bg-primary text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center bg-gradient-to-br from-primary/10 to-secondary/10 overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute w-96 h-96 bg-primary rounded-full -top-10 -left-10"></div>
+            <div class="absolute w-96 h-96 bg-secondary rounded-full -bottom-10 -right-10"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+                Custom Jersey & DTF Printing
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-700 mb-8 max-w-2xl mx-auto">
+                Express your style with high-quality custom printed jerseys. Perfect for teams, events, and personal collections.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="products.html" class="bg-primary hover:bg-secondary text-white font-bold py-3 px-8 rounded-lg transition transform hover:scale-105">
+                    Shop Now
+                </a>
+                <a href="#categories" class="border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold py-3 px-8 rounded-lg transition">
+                    Explore Categories
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Banner -->
+    <section class="bg-secondary text-white py-4 text-center">
+        <p class="text-lg font-semibold">🎉 Free shipping for orders above Rp2.000.000</p>
+    </section>
+
+    <!-- Best Sellers Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">Best Sellers</h2>
+            <div id="best-sellers-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Products will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="py-16 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">Categories</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                <a href="products.html?category=jersey" class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition transform hover:scale-105">
+                    <div class="h-48 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                        <span class="text-4xl">👕</span>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-lg text-gray-800">Jersey</h3>
+                    </div>
+                </a>
+                
+                <a href="products.html?category=shirt" class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition transform hover:scale-105">
+                    <div class="h-48 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                        <span class="text-4xl">👔</span>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-lg text-gray-800">Shirt</h3>
+                    </div>
+                </a>
+                
+                <a href="products.html?category=hoodie" class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition transform hover:scale-105">
+                    <div class="h-48 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                        <span class="text-4xl">🧥</span>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-lg text-gray-800">Hoodie</h3>
+                    </div>
+                </a>
+
+                <a href="products.html?category=cap" class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition transform hover:scale-105">
+                    <div class="h-48 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                        <span class="text-4xl">🧢</span>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-lg text-gray-800">Cap</h3>
+                    </div>
+                </a>
+
+                <a href="products.html?category=totebag" class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition transform hover:scale-105">
+                    <div class="h-48 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                        <span class="text-4xl">👜</span>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-lg text-gray-800">Tote Bag</h3>
+                    </div>
+                </a>
+
+                <a href="products.html?category=accessories" class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition transform hover:scale-105">
+                    <div class="h-48 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                        <span class="text-4xl">⌚</span>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-lg text-gray-800">Accessories</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">New Arrivals</h2>
+            <div id="new-arrivals-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Products will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="font-bold text-lg mb-4">MarrrGallery</h3>
+                    <p class="text-gray-400">Premium custom jersey & DTF printing services.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="index.html" class="hover:text-primary transition">Home</a></li>
+                        <li><a href="products.html" class="hover:text-primary transition">Products</a></li>
+                        <li><a href="#" class="hover:text-primary transition">About</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Support</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-primary transition">FAQ</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Shipping</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Returns</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Privacy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>📧 hello@marrrgallery.com</li>
+                        <li>📱 +62 812 345 678 90</li>
+                        <li>📍 Jakarta, Indonesia</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 MarrrGallery. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/6281234567890" target="_blank" class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition transform hover:scale-110 z-40">
+        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-5.031 1.378c-1.667.985-2.805 2.686-2.951 4.71-.133 1.995.057 3.792 1.53 5.494 1.305 1.424 3.699 2.961 6.634 3.463 1.088.243 2.065.337 2.955.312 1.922-.03 3.719-.4 5.379-1.1.464-.2.morecoinse-.496.671-.773.3-.31.567-.708.567-1.239 0-.556-.224-1.007-.624-1.266z"></path>
+        </svg>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
