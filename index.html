@@ -1,120 +1,839 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>MarrrGallery | Custom Jersey & DTF Printing</title>
+<meta charset="UTF-8">
 
-    <script src="https://cdn.tailwindcss.com"></script>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>MarrrGallery | Custom Jersey & DTF Printing</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
 
-    <style>
-        body{
-            font-family:Inter,sans-serif;
-        }
-    </style>
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet"
+href="style.css">
+
+<style>
+
+body{
+
+font-family:'Inter',sans-serif;
+
+background:#071A2F;
+
+overflow-x:hidden;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+</style>
 
 </head>
 
-<body class="bg-slate-950 text-white">
+<body>
 
-    <!-- ================= NAVBAR ================= -->
+<!-- NAVBAR -->
 
-    <header>
+<header class="fixed top-0 left-0 w-full z-50 bg-[#071A2F]/90 backdrop-blur-lg border-b border-slate-700">
 
-        <nav>
+<div class="max-w-7xl mx-auto px-6">
 
-        </nav>
+<div class="flex justify-between items-center h-20">
 
-    </header>
+<a href="index.html"
+class="flex items-center gap-3">
+
+<img src="logo-asmar.png"
+
+class="h-12">
+
+<span class="text-white text-2xl font-bold">
+
+MarrrGallery
+
+</span>
+
+</a>
+
+<nav class="hidden lg:flex gap-10">
+
+<a href="#"
+
+class="text-white hover:text-red-500 duration-300">
+
+Home
+
+</a>
+
+<a href="products.html"
+
+class="text-white hover:text-red-500 duration-300">
+
+Products
+
+</a>
+
+<a href="#kategori"
+
+class="text-white hover:text-red-500 duration-300">
+
+Kategori
+
+</a>
+
+<a href="#galeri"
+
+class="text-white hover:text-red-500 duration-300">
+
+Galeri
+
+</a>
+
+<a href="#kontak"
+
+class="text-white hover:text-red-500 duration-300">
+
+Kontak
+
+</a>
+
+</nav>
+
+<div class="flex items-center gap-6">
+
+<a href="cart.html"
+
+class="relative">
+
+<i class="fa-solid fa-cart-shopping text-white text-xl"></i>
+
+<span id="cartBadge"
+
+class="absolute -top-2 -right-3 bg-red-600 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">
+
+0
+
+</span>
+
+</a>
+
+<button id="menuBtn"
+
+class="lg:hidden">
+
+<i class="fa-solid fa-bars text-white text-2xl"></i>
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+<!-- Produk Unggulan -->
+<section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-bold text-gray-800">
+                Produk Unggulan
+            </h2>
+            <p class="text-gray-500 mt-3">
+                Pilihan terbaik dengan kualitas premium
+            </p>
+        </div>
 
 
-    <!-- ================= HERO ================= -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
-    <section id="hero">
+            <!-- Card Produk 1 -->
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:-translate-y-2 transition">
 
-    </section>
+                <img src="assets/img/product1.jpg"
+                     class="w-full h-56 object-cover"
+                     alt="Produk">
 
+                <div class="p-5">
+                    <h3 class="text-xl font-semibold text-gray-800">
+                        Produk Premium
+                    </h3>
 
-    <!-- ================= PROMO ================= -->
+                    <p class="text-gray-500 text-sm mt-2">
+                        Deskripsi singkat produk terbaik.
+                    </p>
 
-    <section id="promo">
+                    <div class="flex justify-between items-center mt-5">
 
-    </section>
+                        <span class="text-blue-600 font-bold">
+                            Rp99.000
+                        </span>
 
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                            Beli
+                        </button>
 
-    <!-- ================= KATEGORI ================= -->
+                    </div>
+                </div>
 
-    <section id="kategori">
-
-    </section>
-
-
-    <!-- ================= BEST SELLER ================= -->
-
-    <section id="best-seller">
-
-    </section>
-
-
-    <!-- ================= NEW ARRIVAL ================= -->
-
-    <section id="new-arrival">
-
-    </section>
-
-
-    <!-- ================= KEUNGGULAN ================= -->
-
-    <section id="keunggulan">
-
-    </section>
+            </div>
 
 
-    <!-- ================= TESTIMONI ================= -->
 
-    <section id="testimoni">
+            <!-- Card Produk 2 -->
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:-translate-y-2 transition">
 
-    </section>
+                <img src="assets/img/product2.jpg"
+                     class="w-full h-56 object-cover"
+                     alt="Produk">
 
+                <div class="p-5">
+                    <h3 class="text-xl font-semibold text-gray-800">
+                        Produk Modern
+                    </h3>
 
-    <!-- ================= GALERI ================= -->
+                    <p class="text-gray-500 text-sm mt-2">
+                        Desain elegan dan berkualitas.
+                    </p>
 
-    <section id="galeri">
+                    <div class="flex justify-between items-center mt-5">
 
-    </section>
+                        <span class="text-blue-600 font-bold">
+                            Rp129.000
+                        </span>
 
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                            Beli
+                        </button>
 
-    <!-- ================= CTA ================= -->
+                    </div>
+                </div>
 
-    <section id="cta">
-
-    </section>
-
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer>
-
-    </footer>
-
-
-    <!-- Tombol WhatsApp -->
-
-    <a href="#" id="whatsapp">
-
-    </a>
+            </div>
 
 
-    <script src="script.js"></script>
+
+            <!-- Card Produk 3 -->
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:-translate-y-2 transition">
+
+                <img src="assets/img/product3.jpg"
+                     class="w-full h-56 object-cover"
+                     alt="Produk">
+
+                <div class="p-5">
+                    <h3 class="text-xl font-semibold text-gray-800">
+                        Produk Favorit
+                    </h3>
+
+                    <p class="text-gray-500 text-sm mt-2">
+                        Banyak diminati pelanggan.
+                    </p>
+
+                    <div class="flex justify-between items-center mt-5">
+
+                        <span class="text-blue-600 font-bold">
+                            Rp149.000
+                        </span>
+
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                            Beli
+                        </button>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <!-- Card Produk 4 -->
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:-translate-y-2 transition">
+
+                <img src="assets/img/product4.jpg"
+                     class="w-full h-56 object-cover"
+                     alt="Produk">
+
+                <div class="p-5">
+                    <h3 class="text-xl font-semibold text-gray-800">
+                        Produk Baru
+                    </h3>
+
+                    <p class="text-gray-500 text-sm mt-2">
+                        Koleksi terbaru kami.
+                    </p>
+
+                    <div class="flex justify-between items-center mt-5">
+
+                        <span class="text-blue-600 font-bold">
+                            Rp179.000
+                        </span>
+
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                            Beli
+                        </button>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+</section>
+<!-- Kategori Produk -->
+<section class="py-16 bg-white">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="text-center mb-10">
+
+            <h2 class="text-3xl font-bold text-gray-800">
+                Kategori Produk
+            </h2>
+
+            <p class="text-gray-500 mt-3">
+                Temukan produk sesuai kebutuhanmu
+            </p>
+
+        </div>
+
+
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+
+            <!-- Kategori 1 -->
+            <div class="group bg-gray-100 rounded-2xl p-6 text-center 
+                        hover:bg-blue-600 transition">
+
+                <div class="text-4xl mb-4">
+                    🛒
+                </div>
+
+                <h3 class="font-semibold text-gray-800 
+                           group-hover:text-white">
+                    Fashion
+                </h3>
+
+            </div>
+
+
+
+            <!-- Kategori 2 -->
+            <div class="group bg-gray-100 rounded-2xl p-6 text-center 
+                        hover:bg-blue-600 transition">
+
+                <div class="text-4xl mb-4">
+                    💻
+                </div>
+
+                <h3 class="font-semibold text-gray-800 
+                           group-hover:text-white">
+                    Elektronik
+                </h3>
+
+            </div>
+
+
+
+            <!-- Kategori 3 -->
+            <div class="group bg-gray-100 rounded-2xl p-6 text-center 
+                        hover:bg-blue-600 transition">
+
+                <div class="text-4xl mb-4">
+                    🏠
+                </div>
+
+                <h3 class="font-semibold text-gray-800 
+                           group-hover:text-white">
+                    Rumah
+                </h3>
+
+            </div>
+
+
+
+            <!-- Kategori 4 -->
+            <div class="group bg-gray-100 rounded-2xl p-6 text-center 
+                        hover:bg-blue-600 transition">
+
+                <div class="text-4xl mb-4">
+                    🎁
+                </div>
+
+                <h3 class="font-semibold text-gray-800 
+                           group-hover:text-white">
+                    Lainnya
+                </h3>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- Banner Promo -->
+<section class="py-16">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+
+        <div class="relative overflow-hidden 
+                    rounded-3xl 
+                    bg-blue-600 
+                    p-10 md:p-16">
+
+
+            <div class="relative z-10 max-w-xl">
+
+
+                <h2 class="text-3xl md:text-5xl 
+                           font-bold text-white">
+
+                    Diskon Besar
+                    Hingga 50%
+
+                </h2>
+
+
+
+                <p class="text-blue-100 mt-5 text-lg">
+
+                    Jangan lewatkan promo spesial
+                    dengan harga terbaik.
+
+                </p>
+
+
+
+                <button class="mt-8 
+                               bg-white 
+                               text-blue-600
+                               px-8 py-3
+                               rounded-xl
+                               font-semibold
+                               hover:bg-gray-100
+                               transition">
+
+                    Belanja Sekarang
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- Dekorasi -->
+            <div class="absolute right-0 top-0 
+                        w-64 h-64 
+                        bg-white/10 
+                        rounded-full 
+                        translate-x-20 
+                        -translate-y-20">
+
+            </div>
+
+
+            <div class="absolute left-1/2 bottom-0
+                        w-40 h-40
+                        bg-white/10
+                        rounded-full">
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+<!-- Testimoni -->
+<section class="py-16 bg-gray-50">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="text-center mb-10">
+
+            <h2 class="text-3xl font-bold text-gray-800">
+                Apa Kata Pelanggan?
+            </h2>
+
+            <p class="text-gray-500 mt-3">
+                Pengalaman mereka bersama produk kami
+            </p>
+
+        </div>
+
+
+
+        <div class="grid md:grid-cols-3 gap-8">
+
+
+            <!-- Testimoni 1 -->
+            <div class="bg-white p-6 rounded-2xl shadow">
+
+                <div class="flex items-center gap-4">
+
+                    <img src="assets/img/user1.jpg"
+                         class="w-14 h-14 rounded-full object-cover"
+                         alt="User">
+
+                    <div>
+
+                        <h3 class="font-semibold">
+                            Andi
+                        </h3>
+
+                        <p class="text-sm text-gray-500">
+                            Customer
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <p class="text-gray-600 mt-5">
+                    "Produknya bagus, kualitas sesuai dengan harga.
+                    Pelayanan juga sangat cepat."
+                </p>
+
+
+            </div>
+
+
+
+
+            <!-- Testimoni 2 -->
+            <div class="bg-white p-6 rounded-2xl shadow">
+
+                <div class="flex items-center gap-4">
+
+                    <img src="assets/img/user2.jpg"
+                         class="w-14 h-14 rounded-full object-cover"
+                         alt="User">
+
+
+                    <div>
+
+                        <h3 class="font-semibold">
+                            Rina
+                        </h3>
+
+                        <p class="text-sm text-gray-500">
+                            Customer
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <p class="text-gray-600 mt-5">
+                    "Website mudah digunakan dan pengiriman cepat."
+                </p>
+
+
+            </div>
+
+
+
+
+            <!-- Testimoni 3 -->
+            <div class="bg-white p-6 rounded-2xl shadow">
+
+
+                <div class="flex items-center gap-4">
+
+
+                    <img src="assets/img/user3.jpg"
+                         class="w-14 h-14 rounded-full object-cover"
+                         alt="User">
+
+
+                    <div>
+
+                        <h3 class="font-semibold">
+                            Budi
+                        </h3>
+
+                        <p class="text-sm text-gray-500">
+                            Customer
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <p class="text-gray-600 mt-5">
+                    "Produk berkualitas dan sangat direkomendasikan."
+                </p>
+
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- Newsletter -->
+<section class="py-16 bg-white">
+
+    <div class="max-w-4xl mx-auto px-6 text-center">
+
+
+        <h2 class="text-3xl font-bold text-gray-800">
+            Dapatkan Promo Terbaru
+        </h2>
+
+
+        <p class="text-gray-500 mt-3">
+            Masukkan email untuk mendapatkan informasi terbaru.
+        </p>
+
+
+
+        <div class="mt-8 flex flex-col md:flex-row gap-4">
+
+
+            <input type="email"
+                   placeholder="Email kamu..."
+                   class="flex-1 px-5 py-3 
+                          border rounded-xl
+                          focus:outline-none
+                          focus:ring-2
+                          focus:ring-blue-500">
+
+
+            <button class="bg-blue-600
+                           text-white
+                           px-8 py-3
+                           rounded-xl
+                           hover:bg-blue-700">
+
+                Subscribe
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-gray-300 py-10">
+
+
+    <div class="max-w-7xl mx-auto px-6">
+
+
+        <div class="grid md:grid-cols-4 gap-8">
+
+
+            <div>
+
+                <h3 class="text-white text-xl font-bold">
+                    BrandStore
+                </h3>
+
+                <p class="mt-3 text-sm">
+                    Tempat belanja produk berkualitas
+                    dengan pelayanan terbaik.
+                </p>
+
+            </div>
+
+
+
+            <div>
+
+                <h4 class="text-white font-semibold">
+                    Menu
+                </h4>
+
+                <ul class="mt-3 space-y-2 text-sm">
+
+                    <li>Home</li>
+                    <li>Produk</li>
+                    <li>Tentang</li>
+                    <li>Kontak</li>
+
+                </ul>
+
+            </div>
+
+
+
+            <div>
+
+                <h4 class="text-white font-semibold">
+                    Bantuan
+                </h4>
+
+                <ul class="mt-3 space-y-2 text-sm">
+
+                    <li>FAQ</li>
+                    <li>Pengiriman</li>
+                    <li>Pembayaran</li>
+
+                </ul>
+
+            </div>
+
+
+
+            <div>
+
+                <h4 class="text-white font-semibold">
+                    Sosial Media
+                </h4>
+
+                <p class="mt-3 text-sm">
+                    Instagram<br>
+                    Facebook<br>
+                    WhatsApp
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm">
+
+            © 2026 BrandStore. All Rights Reserved.
+
+        </div>
+
+
+    </div>
+
+
+</footer>
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+
+<script>
+
+    // Mobile Menu
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+
+    if(menuBtn){
+
+        menuBtn.addEventListener("click", () => {
+
+            mobileMenu.classList.toggle("hidden");
+
+        });
+
+    }
+
+
+
+    // Scroll Animation sederhana
+
+    const cards = document.querySelectorAll(".hover\\:-translate-y-2");
+
+
+    const observer = new IntersectionObserver((entries)=>{
+
+        entries.forEach(entry=>{
+
+            if(entry.isIntersecting){
+
+                entry.target.classList.add(
+                    "opacity-100",
+                    "translate-y-0"
+                );
+
+            }
+
+        });
+
+
+    },{
+
+        threshold:0.2
+
+    });
+
+
+
+    cards.forEach(card=>{
+
+        card.classList.add(
+            "opacity-0",
+            "translate-y-10",
+            "transition",
+            "duration-700"
+        );
+
+
+        observer.observe(card);
+
+    });
+
+
+
+</script>
+
 
 </body>
+
 </html>
