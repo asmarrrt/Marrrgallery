@@ -1,275 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MarrrGallery - Custom Jersey Printing & DTF</title>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#E63946",
-                        secondary: "#1D3557",
-                        darkbg: "#071A2F",
-                        card: "#0F2A44",
-                        light: "#F1FAEE"
-                    }
-                }
-            }
-        }
-    </script>
+
+    <title>MarrrGallery | Custom Jersey & DTF Printing</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
     <style>
-        * {
-            font-family: 'Inter', sans-serif;
-        }
-        .btn-primary {
-            @apply bg-primary text-light px-6 py-3 rounded-lg font-semibold transition-all hover:scale-105 hover:shadow-lg;
-        }
-        .btn-secondary {
-            @apply border-2 border-primary text-primary px-6 py-3 rounded-lg font-semibold transition-all hover:bg-primary hover:text-light;
-        }
-        .card-hover {
-            @apply bg-card rounded-lg p-4 transition-all hover:shadow-lg hover:translate-y-[-8px];
-        }
-        .section-title {
-            @apply text-4xl font-bold text-light mb-12;
-        }
-        .navbar {
-            @apply bg-card border-b border-secondary sticky top-0 z-40;
-        }
-        .footer {
-            @apply bg-card border-t border-secondary mt-20 py-12;
-        }
-        .promo-banner {
-            @apply bg-gradient-to-r from-primary to-red-700 text-light py-4 px-6 rounded-lg text-center font-bold;
-        }
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        @media (max-width: 768px) {
-            .product-grid {
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-                gap: 1.5rem;
-            }
-        }
-        .cart-badge {
-            @apply absolute top-[-8px] right-[-8px] bg-primary text-light rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold;
+        body{
+            font-family:Inter,sans-serif;
         }
     </style>
+
 </head>
-<body class="bg-darkbg text-light">
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center gap-3">
-                    <img src="logo-asmar.png" alt="MarrrGallery Logo" class="h-10">
-                    <span class="text-xl font-bold">MarrrGallery</span>
-                </div>
 
-                <div class="hidden md:flex gap-8">
-                    <a href="index.html" class="hover:text-primary transition">Home</a>
-                    <a href="products.html" class="hover:text-primary transition">Products</a>
-                    <a href="#" class="hover:text-primary transition">About</a>
-                    <a href="#" class="hover:text-primary transition">Contact</a>
-                </div>
+<body class="bg-slate-950 text-white">
 
-                <div class="flex items-center gap-6">
-                    <div class="relative cursor-pointer" onclick="window.location.href='cart.html'">
-                        <i class="fas fa-shopping-cart text-lg hover:text-primary transition"></i>
-                        <div class="cart-badge" id="cartBadge">0</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <!-- ================= NAVBAR ================= -->
 
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-br from-darkbg to-card py-32">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h1 class="text-5xl md:text-6xl font-bold text-light mb-6">Custom Jersey Printing & DTF</h1>
-                    <p class="text-xl text-gray-300 mb-8">Create your unique style with premium quality jerseys and direct-to-fabric printing. Fast delivery, affordable prices.</p>
-                    <a href="products.html" class="btn-primary inline-block">Shop Now</a>
-                </div>
-                <div class="bg-gradient-to-br from-primary/20 to-primary/5 rounded-lg h-96 flex items-center justify-center">
-                    <i class="fas fa-shirt text-8xl text-primary opacity-50"></i>
-                </div>
-            </div>
-        </div>
+    <header>
+
+        <nav>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section id="hero">
+
     </section>
 
-    <!-- Promo Banner -->
-    <section class="py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="promo-banner">
-                <p>🎉 Belanja di atas Rp2.000.000 gratis ongkir ke seluruh Indonesia!</p>
-            </div>
-        </div>
+
+    <!-- ================= PROMO ================= -->
+
+    <section id="promo">
+
     </section>
 
-    <!-- Best Sellers Section -->
-    <section class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="section-title">Best Sellers</h2>
-            <div class="product-grid" id="bestSellersGrid"></div>
-        </div>
+
+    <!-- ================= KATEGORI ================= -->
+
+    <section id="kategori">
+
     </section>
 
-    <!-- Categories Section -->
-    <section class="py-20 bg-gradient-to-b from-transparent to-secondary/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="section-title">Categories</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="card-hover p-8 text-center cursor-pointer" onclick="window.location.href='products.html?category=Jersey%20Bola'">
-                    <i class="fas fa-futbol text-5xl text-primary mb-4"></i>
-                    <h3 class="text-2xl font-bold mb-2">Jersey Bola</h3>
-                    <p class="text-gray-400">Football jerseys with custom designs</p>
-                </div>
-                <div class="card-hover p-8 text-center cursor-pointer" onclick="window.location.href='products.html?category=Jersey%20Futsal'">
-                    <i class="fas fa-futbol text-5xl text-primary mb-4"></i>
-                    <h3 class="text-2xl font-bold mb-2">Jersey Futsal</h3>
-                    <p class="text-gray-400">Futsal jerseys for team play</p>
-                </div>
-                <div class="card-hover p-8 text-center cursor-pointer" onclick="window.location.href='products.html?category=Kaos%20DTF'">
-                    <i class="fas fa-tshirt text-5xl text-primary mb-4"></i>
-                    <h3 class="text-2xl font-bold mb-2">Kaos DTF</h3>
-                    <p class="text-gray-400">Direct-to-fabric printed t-shirts</p>
-                </div>
-            </div>
-        </div>
+
+    <!-- ================= BEST SELLER ================= -->
+
+    <section id="best-seller">
+
     </section>
 
-    <!-- New Arrivals Section -->
-    <section class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="section-title">New Arrivals</h2>
-            <div class="product-grid" id="newArrivalsGrid"></div>
-        </div>
+
+    <!-- ================= NEW ARRIVAL ================= -->
+
+    <section id="new-arrival">
+
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div>
-                    <div class="flex items-center gap-2 mb-4">
-                        <img src="logo-asmar.png" alt="MarrrGallery Logo" class="h-8">
-                        <h3 class="font-bold text-lg">MarrrGallery</h3>
-                    </div>
-                    <p class="text-gray-400">Premium custom jersey printing & DTF services</p>
-                </div>
-                <div>
-                    <h3 class="font-bold text-light mb-4">Quick Links</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="index.html" class="hover:text-primary transition">Home</a></li>
-                        <li><a href="products.html" class="hover:text-primary transition">Products</a></li>
-                        <li><a href="#" class="hover:text-primary transition">About</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="font-bold text-light mb-4">Support</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-primary transition">Contact</a></li>
-                        <li><a href="#" class="hover:text-primary transition">FAQ</a></li>
-                        <li><a href="#" class="hover:text-primary transition">Returns</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="font-bold text-light mb-4">Follow Us</h3>
-                    <div class="flex gap-4">
-                        <a href="#" class="text-gray-400 hover:text-primary transition"><i class="fab fa-instagram text-xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-primary transition"><i class="fab fa-facebook text-xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-primary transition"><i class="fab fa-twitter text-xl"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="border-t border-secondary pt-8 text-center text-gray-400">
-                <p>&copy; 2024 MarrrGallery. All rights reserved.</p>
-            </div>
-        </div>
+
+    <!-- ================= KEUNGGULAN ================= -->
+
+    <section id="keunggulan">
+
+    </section>
+
+
+    <!-- ================= TESTIMONI ================= -->
+
+    <section id="testimoni">
+
+    </section>
+
+
+    <!-- ================= GALERI ================= -->
+
+    <section id="galeri">
+
+    </section>
+
+
+    <!-- ================= CTA ================= -->
+
+    <section id="cta">
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
     </footer>
 
-    <!-- WhatsApp Button -->
-    <div class="fixed bottom-8 right-8 w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition shadow-lg z-50" onclick="openWhatsApp()">
-        <i class="fab fa-whatsapp text-2xl text-light"></i>
-    </div>
+
+    <!-- Tombol WhatsApp -->
+
+    <a href="#" id="whatsapp">
+
+    </a>
+
 
     <script src="script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const bestSellers = products.filter(p => p.is_best_seller);
-            const newArrivals = products.filter(p => p.is_new_arrival);
 
-            displayProducts(bestSellers, 'bestSellersGrid');
-            displayProducts(newArrivals, 'newArrivalsGrid');
-            updateCartBadge();
-        });
-
-        function displayProducts(productList, containerId) {
-            const container = document.getElementById(containerId);
-            container.innerHTML = productList.map(product => `
-                <div class="card-hover">
-                    <img src="${product.image}" alt="${product.name}" class="w-full h-64 object-cover rounded mb-4">
-                    <h3 class="font-bold text-lg mb-2 text-light">${product.name}</h3>
-                    <p class="text-gray-400 text-sm mb-4">${product.category}</p>
-                    <p class="text-primary font-bold text-lg mb-4">Rp${formatPrice(product.price)}</p>
-                    <button onclick="goToDetail(${product.id})" class="btn-primary w-full mb-2 text-sm">View Details</button>
-                    <button onclick="addToCart(${product.id})" class="btn-secondary w-full text-sm">Add to Cart</button>
-                </div>
-            `).join('');
-        }
-
-        function formatPrice(price) {
-            return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-        }
-
-        function goToDetail(id) {
-            window.location.href = `detail.html?id=${id}`;
-        }
-
-        function addToCart(productId) {
-            const product = products.find(p => p.id === productId);
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const existingItem = cart.find(item => item.id === productId);
-
-            if (existingItem) {
-                existingItem.quantity++;
-            } else {
-                cart.push({ ...product, quantity: 1 });
-            }
-
-            localStorage.setItem('cart', JSON.stringify(cart));
-            updateCartBadge();
-            showNotification(`${product.name} added to cart!`);
-        }
-
-        function updateCartBadge() {
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const count = cart.reduce((sum, item) => sum + item.quantity, 0);
-            document.getElementById('cartBadge').textContent = count;
-        }
-
-        function openWhatsApp() {
-            window.open('https://wa.me/6281234567890', '_blank');
-        }
-
-        function showNotification(message) {
-            const notification = document.createElement('div');
-            notification.className = 'fixed top-4 right-4 bg-primary text-light px-6 py-3 rounded shadow-lg z-50';
-            notification.textContent = message;
-            document.body.appendChild(notification);
-            setTimeout(() => notification.remove(), 3000);
-        }
-    </script>
 </body>
 </html>
