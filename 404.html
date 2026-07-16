@@ -1,149 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Not Found - MarrrGallery</title>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#E63946",
-                        secondary: "#1D3557",
-                        darkbg: "#071A2F",
-                        card: "#0F2A44",
-                        light: "#F1FAEE"
-                    }
-                }
-            }
-        }
-    </script>
+    <title>404 - Halaman Tidak Ditemukan | MarrrGallery</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
     <style>
-        * {
-            font-family: 'Inter', sans-serif;
-        }
-        .btn-primary {
-            @apply bg-primary text-light px-6 py-3 rounded-lg font-semibold transition-all hover:scale-105 hover:shadow-lg;
-        }
-        .btn-secondary {
-            @apply border-2 border-primary text-primary px-6 py-3 rounded-lg font-semibold transition-all hover:bg-primary hover:text-light;
-        }
-        .navbar {
-            @apply bg-card border-b border-secondary sticky top-0 z-40;
-        }
-        .footer {
-            @apply bg-card border-t border-secondary mt-20 py-12;
-        }
-        .cart-badge {
-            @apply absolute top-[-8px] right-[-8px] bg-primary text-light rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold;
+        body{
+            font-family:'Inter',sans-serif;
         }
     </style>
 </head>
-<body class="bg-darkbg text-light">
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center gap-3">
-                    <img src="logo-asmar.png" alt="MarrrGallery Logo" class="h-10">
-                    <span class="text-xl font-bold">MarrrGallery</span>
-                </div>
 
-                <div class="hidden md:flex gap-8">
-                    <a href="index.html" class="hover:text-primary transition">Home</a>
-                    <a href="products.html" class="hover:text-primary transition">Products</a>
-                    <a href="#" class="hover:text-primary transition">About</a>
-                    <a href="#" class="hover:text-primary transition">Contact</a>
-                </div>
+<body class="bg-slate-950 text-white flex items-center justify-center min-h-screen">
 
-                <div class="flex items-center gap-6">
-                    <div class="relative cursor-pointer" onclick="window.location.href='cart.html'">
-                        <i class="fas fa-shopping-cart text-lg hover:text-primary transition"></i>
-                        <div class="cart-badge" id="cartBadge">0</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <div class="text-center px-6">
 
-    <!-- 404 Section -->
-    <section class="bg-gradient-to-br from-darkbg to-card py-32 min-h-screen flex items-center justify-center">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="text-9xl font-bold bg-gradient-to-r from-primary to-red-700 bg-clip-text text-transparent mb-6">
-                404
-            </div>
-            <h1 class="text-5xl font-bold text-light mb-4">Page Not Found</h1>
-            <p class="text-xl text-gray-400 mb-8 max-w-md mx-auto">Oops! The page you're looking for doesn't exist. It might have been moved or deleted.</p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="index.html" class="btn-primary inline-block">
-                    <i class="fas fa-home mr-2"></i> Back to Home
-                </a>
-                <a href="products.html" class="btn-secondary inline-block">
-                    <i class="fas fa-shopping-bag mr-2"></i> Shop Products
-                </a>
-            </div>
-        </div>
-    </section>
+        <h1 class="text-8xl font-extrabold text-red-600">
+            404
+        </h1>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div>
-                    <div class="flex items-center gap-2 mb-4">
-                        <img src="logo-asmar.png" alt="MarrrGallery Logo" class="h-8">
-                        <h3 class="font-bold text-lg">MarrrGallery</h3>
-                    </div>
-                    <p class="text-gray-400">Premium custom jersey printing & DTF services</p>
-                </div>
-                <div>
-                    <h3 class="font-bold text-light mb-4">Quick Links</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="index.html" class="hover:text-primary transition">Home</a></li>
-                        <li><a href="products.html" class="hover:text-primary transition">Products</a></li>
-                        <li><a href="#" class="hover:text-primary transition">About</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="font-bold text-light mb-4">Support</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-primary transition">Contact</a></li>
-                        <li><a href="#" class="hover:text-primary transition">FAQ</a></li>
-                        <li><a href="#" class="hover:text-primary transition">Returns</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="font-bold text-light mb-4">Follow Us</h3>
-                    <div class="flex gap-4">
-                        <a href="#" class="text-gray-400 hover:text-primary transition"><i class="fab fa-instagram text-xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-primary transition"><i class="fab fa-facebook text-xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-primary transition"><i class="fab fa-twitter text-xl"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="border-t border-secondary pt-8 text-center text-gray-400">
-                <p>&copy; 2024 MarrrGallery. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+        <h2 class="text-3xl font-bold mt-6">
+            Halaman Tidak Ditemukan
+        </h2>
 
-    <script src="script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            updateCartBadge();
-        });
+        <p class="text-slate-400 mt-4 max-w-md mx-auto">
+            Maaf, halaman yang Anda cari tidak tersedia atau sudah dipindahkan.
+        </p>
 
-        function updateCartBadge() {
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const count = cart.reduce((sum, item) => sum + item.quantity, 0);
-            document.getElementById('cartBadge').textContent = count;
-        }
-    </script>
+        <a href="index.html"
+        class="inline-block mt-8 px-8 py-3 bg-red-600 rounded-lg hover:bg-red-700 transition duration-300">
+            Kembali ke Beranda
+        </a>
+
+    </div>
+
 </body>
 </html>
