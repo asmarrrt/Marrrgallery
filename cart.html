@@ -1,313 +1,157 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Cart - MarrrGallery</title>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#E63946",
-                        secondary: "#1D3557",
-                        darkbg: "#071A2F",
-                        card: "#0F2A44",
-                        light: "#F1FAEE"
-                    }
-                }
-            }
-        }
-    </script>
+    <title>Keranjang Belanja | MarrrGallery</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
     <style>
-        * {
-            font-family: 'Inter', sans-serif;
-        }
-        .btn-primary {
-            @apply bg-primary text-light px-6 py-3 rounded-lg font-semibold transition-all hover:scale-105 hover:shadow-lg;
-        }
-        .btn-secondary {
-            @apply border-2 border-primary text-primary px-6 py-3 rounded-lg font-semibold transition-all hover:bg-primary hover:text-light;
-        }
-        .navbar {
-            @apply bg-card border-b border-secondary sticky top-0 z-40;
-        }
-        .footer {
-            @apply bg-card border-t border-secondary mt-20 py-12;
-        }
-        .quantity-control {
-            @apply flex items-center gap-2 bg-secondary w-fit px-3 py-2 rounded;
-        }
-        .quantity-btn {
-            @apply w-8 h-8 flex items-center justify-center cursor-pointer hover:bg-primary rounded transition text-light;
-        }
-        .cart-badge {
-            @apply absolute top-[-8px] right-[-8px] bg-primary text-light rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold;
-        }
-        .cart-item {
-            @apply border-b border-secondary pb-6 mb-6;
-        }
-        .cart-item:last-child {
-            @apply border-b-0;
+        body{
+            font-family:'Inter',sans-serif;
         }
     </style>
 </head>
-<body class="bg-darkbg text-light">
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center gap-3">
-                    <img src="logo-asmar.png" alt="MarrrGallery Logo" class="h-10">
-                    <span class="text-xl font-bold">MarrrGallery</span>
-                </div>
 
-                <div class="hidden md:flex gap-8">
-                    <a href="index.html" class="hover:text-primary transition">Home</a>
-                    <a href="products.html" class="hover:text-primary transition">Products</a>
-                    <a href="#" class="hover:text-primary transition">About</a>
-                    <a href="#" class="hover:text-primary transition">Contact</a>
-                </div>
+<body class="bg-slate-950 text-white">
 
-                <div class="flex items-center gap-6">
-                    <div class="relative cursor-pointer" onclick="window.location.href='cart.html'">
-                        <i class="fas fa-shopping-cart text-lg hover:text-primary transition"></i>
-                        <div class="cart-badge" id="cartBadge">0</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
+<!-- ================= NAVBAR ================= -->
 
-    <!-- Cart Section -->
-    <section class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 class="text-4xl font-bold text-light mb-8">Shopping Cart</h1>
+<header class="bg-slate-900 border-b border-slate-800 sticky top-0 z-50">
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Cart Items -->
-                <div class="md:col-span-2">
-                    <div class="bg-card p-6 rounded-lg" id="cartContainer"></div>
+<div class="max-w-7xl mx-auto px-5">
 
-                    <!-- Empty Cart State -->
-                    <div id="emptyCartState" class="bg-card p-12 rounded-lg text-center hidden">
-                        <i class="fas fa-shopping-cart text-6xl text-gray-500 mb-4"></i>
-                        <h2 class="text-2xl font-bold text-light mb-4">Your cart is empty</h2>
-                        <p class="text-gray-400 mb-6">Add some products to get started!</p>
-                        <a href="products.html" class="btn-primary inline-block">Continue Shopping</a>
-                    </div>
-                </div>
+<div class="flex justify-between items-center h-16">
 
-                <!-- Cart Summary -->
-                <div class="bg-card p-6 rounded-lg h-fit">
-                    <h2 class="text-2xl font-bold text-light mb-6">Order Summary</h2>
+<a href="index.html" class="flex items-center gap-3">
 
-                    <div id="summaryContainer"></div>
+<img src="logo-asmar.png" class="h-10">
 
-                    <div id="emptySummary" class="text-center py-8 hidden">
-                        <p class="text-gray-400">No items in cart</p>
-                    </div>
+<span class="text-xl font-bold">
+MarrrGallery
+</span>
 
-                    <div id="checkoutSection" class="hidden">
-                        <button onclick="checkoutWhatsApp()" class="btn-primary w-full py-4 text-lg mb-3 font-bold">
-                            <i class="fas fa-whatsapp mr-2"></i> Checkout via WhatsApp
-                        </button>
-                        <a href="products.html" class="btn-secondary w-full py-3 rounded-lg font-semibold text-center block">
-                            Continue Shopping
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+</a>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div>
-                    <div class="flex items-center gap-2 mb-4">
-                        <img src="logo-asmar.png" alt="MarrrGallery Logo" class="h-8">
-                        <h3 class="font-bold text-lg">MarrrGallery</h3>
-                    </div>
-                    <p class="text-gray-400">Premium custom jersey printing & DTF services</p>
-                </div>
-                <div>
-                    <h3 class="font-bold text-light mb-4">Quick Links</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="index.html" class="hover:text-primary transition">Home</a></li>
-                        <li><a href="products.html" class="hover:text-primary transition">Products</a></li>
-                        <li><a href="#" class="hover:text-primary transition">About</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="font-bold text-light mb-4">Support</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-primary transition">Contact</a></li>
-                        <li><a href="#" class="hover:text-primary transition">FAQ</a></li>
-                        <li><a href="#" class="hover:text-primary transition">Returns</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="font-bold text-light mb-4">Follow Us</h3>
-                    <div class="flex gap-4">
-                        <a href="#" class="text-gray-400 hover:text-primary transition"><i class="fab fa-instagram text-xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-primary transition"><i class="fab fa-facebook text-xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-primary transition"><i class="fab fa-twitter text-xl"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="border-t border-secondary pt-8 text-center text-gray-400">
-                <p>&copy; 2024 MarrrGallery. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+<a href="index.html"
+class="text-red-500 hover:text-red-400">
 
-    <script src="script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            loadCart();
-            updateCartBadge();
-        });
+<i class="fa-solid fa-arrow-left"></i>
 
-        function loadCart() {
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const container = document.getElementById('cartContainer');
-            const summaryContainer = document.getElementById('summaryContainer');
-            const emptySummary = document.getElementById('emptySummary');
-            const emptyState = document.getElementById('emptyCartState');
-            const checkoutSection = document.getElementById('checkoutSection');
+<span class="ml-2">
+Kembali
+</span>
 
-            if (cart.length === 0) {
-                container.innerHTML = '';
-                emptyState.classList.remove('hidden');
-                emptySummary.classList.remove('hidden');
-                checkoutSection.classList.add('hidden');
-                return;
-            }
+</a>
 
-            emptyState.classList.add('hidden');
-            emptySummary.classList.add('hidden');
-            checkoutSection.classList.remove('hidden');
+</div>
 
-            container.innerHTML = cart.map((item, index) => `
-                <div class="cart-item">
-                    <div class="grid md:grid-cols-4 gap-4 items-start">
-                        <div class="md:col-span-1">
-                            <img src="${item.image}" alt="${item.name}" class="w-full rounded">
-                        </div>
-                        <div class="md:col-span-3">
-                            <div class="flex justify-between items-start mb-4">
-                                <div>
-                                    <h3 class="font-bold text-lg text-light">${item.name}</h3>
-                                    <p class="text-gray-400 text-sm">${item.category}</p>
-                                </div>
-                                <button onclick="removeFromCart(${index})" class="text-primary hover:text-red-500 transition">
-                                    <i class="fas fa-trash-alt"></i>
-                                </button>
-                            </div>
+</div>
 
-                            <div class="flex justify-between items-center">
-                                <div class="quantity-control">
-                                    <button class="quantity-btn" onclick="updateQuantity(${index}, ${item.quantity - 1})">
-                                        <i class="fas fa-minus"></i>
-                                    </button>
-                                    <span class="w-8 text-center font-bold text-light">${item.quantity}</span>
-                                    <button class="quantity-btn" onclick="updateQuantity(${index}, ${item.quantity + 1})">
-                                        <i class="fas fa-plus"></i>
-                                    </button>
-                                </div>
-                                <div class="text-right">
-                                    <p class="text-gray-400 text-sm">Unit: Rp${formatPrice(item.price)}</p>
-                                    <p class="text-primary font-bold text-lg">Rp${formatPrice(item.price * item.quantity)}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
+</header>
 
-            // Update summary
-            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-            const shipping = subtotal >= 2000000 ? 0 : 50000;
-            const total = subtotal + shipping;
+<!-- ================= JUDUL ================= -->
 
-            summaryContainer.innerHTML = `
-                <div class="flex justify-between text-light pb-3 border-b border-secondary">
-                    <span>Subtotal</span>
-                    <span>Rp${formatPrice(subtotal)}</span>
-                </div>
-                <div class="flex justify-between text-light py-3 border-b border-secondary">
-                    <span>Shipping</span>
-                    <span class="${shipping === 0 ? 'text-green-400 font-bold' : 'text-light'}">
-                        ${shipping === 0 ? '✓ FREE' : 'Rp' + formatPrice(shipping)}
-                    </span>
-                </div>
-                <div class="flex justify-between text-primary text-lg font-bold py-4">
-                    <span>Total</span>
-                    <span>Rp${formatPrice(total)}</span>
-                </div>
-                ${subtotal < 2000000 ? `<p class="text-gray-400 text-sm mt-4 text-center">Spend Rp${formatPrice(2000000 - subtotal)} more for free shipping!</p>` : '<p class="text-green-400 text-sm mt-4 text-center">✓ You qualify for free shipping!</p>'}
-            `;
-        }
+<section class="max-w-7xl mx-auto px-5 py-10">
 
-        function updateQuantity(index, newQuantity) {
-            if (newQuantity < 1) {
-                removeFromCart(index);
-                return;
-            }
+<h1 class="text-4xl font-bold">
 
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            cart[index].quantity = newQuantity;
-            localStorage.setItem('cart', JSON.stringify(cart));
-            loadCart();
-            updateCartBadge();
-        }
+Keranjang Belanja
 
-        function removeFromCart(index) {
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            cart.splice(index, 1);
-            localStorage.setItem('cart', JSON.stringify(cart));
-            loadCart();
-            updateCartBadge();
-        }
+</h1>
 
-        function formatPrice(price) {
-            return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-        }
+<p class="text-slate-400 mt-2">
 
-        function updateCartBadge() {
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const count = cart.reduce((sum, item) => sum + item.quantity, 0);
-            document.getElementById('cartBadge').textContent = count;
-        }
+Periksa kembali produk sebelum melakukan checkout.
 
-        function checkoutWhatsApp() {
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+</p>
 
-            if (cart.length === 0) {
-                alert('Your cart is empty');
-                return;
-            }
+</section>
 
-            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-            const shipping = subtotal >= 2000000 ? 0 : 50000;
-            const total = subtotal + shipping;
+<!-- ================= LIST PRODUK ================= -->
 
-            const items = cart.map(item => `- ${item.name} (${item.quantity}x)`).join('\n');
-            const message = `Halo, saya ingin memesan:\n${items}\n\nSubtotal: Rp${formatPrice(subtotal)}\nOngkir: ${shipping === 0 ? 'GRATIS' : 'Rp' + formatPrice(shipping)}\nTotal: Rp${formatPrice(total)}`;
+<section class="max-w-7xl mx-auto px-5">
 
-            const phoneNumber = '6281234567890';
-            const encodedMessage = encodeURIComponent(message);
-            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+<div id="cartItems"
 
-            window.open(whatsappUrl, '_blank');
-        }
-    </script>
+class="space-y-6">
+
+<!-- Produk akan muncul dari JavaScript -->
+
+</div>
+
+</section>
+
+<!-- ================= TOTAL ================= -->
+
+<section class="max-w-7xl mx-auto px-5 py-12">
+
+<div class="bg-slate-900 rounded-xl p-8 border border-slate-800">
+
+<div class="flex justify-between mb-4">
+
+<span>Subtotal</span>
+
+<span id="subtotal">
+Rp0
+</span>
+
+</div>
+
+<div class="flex justify-between mb-4">
+
+<span>Ongkir</span>
+
+<span>
+Gratis
+</span>
+
+</div>
+
+<hr class="border-slate-700 my-5">
+
+<div class="flex justify-between text-2xl font-bold">
+
+<span>Total</span>
+
+<span id="total">
+
+Rp0
+
+</span>
+
+</div>
+
+<button id="checkoutBtn"
+
+class="w-full mt-8 bg-red-600 hover:bg-red-700 py-4 rounded-lg text-lg font-semibold transition">
+
+<i class="fab fa-whatsapp mr-2"></i>
+
+Checkout via WhatsApp
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="border-t border-slate-800 mt-16 py-8 text-center text-slate-500">
+
+© 2026 MarrrGallery
+
+</footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>
