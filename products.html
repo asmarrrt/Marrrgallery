@@ -1,254 +1,1131 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products - MarrrGallery</title>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#E63946",
-                        secondary: "#1D3557",
-                        darkbg: "#071A2F",
-                        card: "#0F2A44",
-                        light: "#F1FAEE"
-                    }
-                }
-            }
-        }
-    </script>
+
+    <title>Products - BrandStore</title>
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            font-family: 'Inter', sans-serif;
-        }
-        .btn-primary {
-            @apply bg-primary text-light px-6 py-3 rounded-lg font-semibold transition-all hover:scale-105 hover:shadow-lg;
-        }
-        .btn-secondary {
-            @apply border-2 border-primary text-primary px-6 py-3 rounded-lg font-semibold transition-all hover:bg-primary hover:text-light;
-        }
-        .card-hover {
-            @apply bg-card rounded-lg p-4 transition-all hover:shadow-lg hover:translate-y-[-8px];
-        }
-        .navbar {
-            @apply bg-card border-b border-secondary sticky top-0 z-40;
-        }
-        .footer {
-            @apply bg-card border-t border-secondary mt-20 py-12;
-        }
-        .filter-btn {
-            @apply px-6 py-2 border-2 border-secondary rounded-lg transition-all text-light hover:bg-primary hover:border-primary cursor-pointer;
-        }
-        .filter-btn.active {
-            @apply bg-primary border-primary;
-        }
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        @media (max-width: 768px) {
-            .product-grid {
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-                gap: 1.5rem;
-            }
-        }
-        .cart-badge {
-            @apply absolute top-[-8px] right-[-8px] bg-primary text-light rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold;
-        }
-    </style>
+
 </head>
-<body class="bg-darkbg text-light">
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center gap-3">
-                    <img src="logo-asmar.png" alt="MarrrGallery Logo" class="h-10">
-                    <span class="text-xl font-bold">MarrrGallery</span>
-                </div>
 
-                <div class="hidden md:flex gap-8">
-                    <a href="index.html" class="hover:text-primary transition">Home</a>
-                    <a href="products.html" class="hover:text-primary transition">Products</a>
-                    <a href="#" class="hover:text-primary transition">About</a>
-                    <a href="#" class="hover:text-primary transition">Contact</a>
-                </div>
 
-                <div class="flex items-center gap-6">
-                    <div class="relative cursor-pointer" onclick="window.location.href='cart.html'">
-                        <i class="fas fa-shopping-cart text-lg hover:text-primary transition"></i>
-                        <div class="cart-badge" id="cartBadge">0</div>
+<body class="bg-gray-50 text-gray-800">
+
+
+<!-- Navbar -->
+<nav class="bg-white shadow-md fixed w-full top-0 z-50">
+
+    <div class="max-w-7xl mx-auto px-6 py-4 
+                flex justify-between items-center">
+
+
+        <!-- Logo -->
+        <a href="index.html"
+           class="text-2xl font-bold text-blue-600">
+
+            BrandStore
+
+        </a>
+
+
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-8">
+
+
+            <a href="index.html"
+               class="hover:text-blue-600">
+
+                Home
+
+            </a>
+
+
+            <a href="products.html"
+               class="text-blue-600 font-semibold">
+
+                Products
+
+            </a>
+
+
+            <a href="#about"
+               class="hover:text-blue-600">
+
+                About
+
+            </a>
+
+
+            <a href="#contact"
+               class="hover:text-blue-600">
+
+                Contact
+
+            </a>
+
+
+
+            <a href="cart.html"
+               class="bg-blue-600 text-white 
+                      px-5 py-2 rounded-xl
+                      hover:bg-blue-700">
+
+                Cart
+
+            </a>
+
+
+        </div>
+
+
+
+
+        <!-- Mobile Button -->
+        <button id="menu-btn"
+                class="md:hidden text-2xl">
+
+            ☰
+
+        </button>
+
+
+    </div>
+
+
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+         class="hidden md:hidden 
+                px-6 pb-5 space-y-4">
+
+
+        <a href="index.html"
+           class="block">
+
+            Home
+
+        </a>
+
+
+        <a href="products.html"
+           class="block text-blue-600">
+
+            Products
+
+        </a>
+
+
+        <a href="cart.html"
+           class="block">
+
+            Cart
+
+        </a>
+
+
+    </div>
+
+
+</nav>
+<!-- Header Products -->
+<section class="pt-32 pb-12">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+
+        <div class="text-center">
+
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800">
+
+                Semua Produk
+
+            </h1>
+
+
+            <p class="text-gray-500 mt-4">
+
+                Temukan berbagai produk terbaik
+                dengan kualitas premium
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- Filter Section -->
+<section class="pb-10">
+
+
+    <div class="max-w-7xl mx-auto px-6">
+
+
+        <div class="bg-white rounded-2xl shadow p-6">
+
+
+            <div class="grid md:grid-cols-3 gap-5">
+
+
+                <!-- Search -->
+                <div>
+
+
+                    <label class="text-sm text-gray-500">
+                        Cari Produk
+                    </label>
+
+
+                    <div class="mt-2 relative">
+
+
+                        <input type="text"
+                               placeholder="Cari produk..."
+                               class="w-full border rounded-xl 
+                                      px-5 py-3
+                                      focus:outline-none
+                                      focus:ring-2
+                                      focus:ring-blue-500">
+
+
                     </div>
+
+
                 </div>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Products Section -->
-    <section class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 class="text-4xl font-bold text-light mb-4">Our Products</h1>
-            <p class="text-gray-400 mb-12">Discover our complete collection of custom jerseys and DTF products</p>
 
-            <!-- Filter Section -->
-            <div class="mb-12">
-                <h3 class="text-lg font-bold text-light mb-4">Filter by Category</h3>
-                <div class="flex flex-wrap gap-4">
-                    <button class="filter-btn active" onclick="filterProducts('all')">All Products</button>
-                    <button class="filter-btn" onclick="filterProducts('Jersey Bola')">Jersey Bola</button>
-                    <button class="filter-btn" onclick="filterProducts('Jersey Futsal')">Jersey Futsal</button>
-                    <button class="filter-btn" onclick="filterProducts('Kaos DTF')">Kaos DTF</button>
+
+
+
+                <!-- Category -->
+                <div>
+
+
+                    <label class="text-sm text-gray-500">
+                        Kategori
+                    </label>
+
+
+                    <select
+                    class="mt-2 w-full border rounded-xl 
+                           px-5 py-3
+                           focus:outline-none
+                           focus:ring-2
+                           focus:ring-blue-500">
+
+
+                        <option>
+                            Semua Kategori
+                        </option>
+
+
+                        <option>
+                            Fashion
+                        </option>
+
+
+                        <option>
+                            Elektronik
+                        </option>
+
+
+                        <option>
+                            Rumah
+                        </option>
+
+
+                        <option>
+                            Aksesoris
+                        </option>
+
+
+                    </select>
+
+
                 </div>
+
+
+
+
+
+                <!-- Sort -->
+                <div>
+
+
+                    <label class="text-sm text-gray-500">
+                        Urutkan
+                    </label>
+
+
+                    <select
+                    class="mt-2 w-full border rounded-xl 
+                           px-5 py-3
+                           focus:outline-none
+                           focus:ring-2
+                           focus:ring-blue-500">
+
+
+                        <option>
+                            Produk Terbaru
+                        </option>
+
+
+                        <option>
+                            Harga Terendah
+                        </option>
+
+
+                        <option>
+                            Harga Tertinggi
+                        </option>
+
+
+                        <option>
+                            Produk Terpopuler
+                        </option>
+
+
+                    </select>
+
+
+                </div>
+
+
+
             </div>
 
-            <!-- Products Grid -->
-            <div class="product-grid" id="productsGrid"></div>
 
-            <!-- Empty State -->
-            <div id="emptyState" class="text-center py-20 hidden">
-                <i class="fas fa-inbox text-6xl text-gray-500 mb-4"></i>
-                <p class="text-2xl text-gray-400 mb-2">No products found</p>
-                <p class="text-gray-500">Try selecting a different category</p>
-            </div>
         </div>
+
+
+    </div>
+
+
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div>
-                    <div class="flex items-center gap-2 mb-4">
-                        <img src="logo-asmar.png" alt="MarrrGallery Logo" class="h-8">
-                        <h3 class="font-bold text-lg">MarrrGallery</h3>
+    <!-- Product Grid -->
+<section class="pb-16">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+
+        <div class="grid sm:grid-cols-2 
+                    lg:grid-cols-4 gap-8">
+
+
+
+            <!-- Product 1 -->
+            <div class="bg-white rounded-2xl shadow-md 
+                        overflow-hidden 
+                        hover:-translate-y-2 
+                        transition">
+
+
+                <div class="relative">
+
+                    <img src="assets/img/product1.jpg"
+                         class="w-full h-60 object-cover"
+                         alt="Product">
+
+
+                    <span class="absolute top-4 left-4
+                                 bg-red-500 text-white
+                                 text-sm px-3 py-1
+                                 rounded-full">
+
+                        -20%
+
+                    </span>
+
+
+                </div>
+
+
+
+                <div class="p-5">
+
+
+                    <h3 class="font-semibold text-lg">
+
+                        Premium Product
+
+                    </h3>
+
+
+                    <p class="text-gray-500 text-sm mt-2">
+
+                        Produk berkualitas tinggi
+
+                    </p>
+
+
+
+                    <div class="mt-4 flex justify-between items-center">
+
+
+                        <span class="text-blue-600 font-bold">
+
+                            Rp99.000
+
+                        </span>
+
+
+
+                        <a href="detail.html"
+                           class="text-sm 
+                                  text-blue-600">
+
+                            Detail
+
+                        </a>
+
+
                     </div>
-                    <p class="text-gray-400">Premium custom jersey printing & DTF services</p>
+
+
+
+                    <button
+                    class="mt-4 w-full
+                           bg-blue-600
+                           text-white
+                           py-2 rounded-xl
+                           hover:bg-blue-700">
+
+                        Tambah Keranjang
+
+                    </button>
+
+
+
                 </div>
-                <div>
-                    <h3 class="font-bold text-light mb-4">Quick Links</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="index.html" class="hover:text-primary transition">Home</a></li>
-                        <li><a href="products.html" class="hover:text-primary transition">Products</a></li>
-                        <li><a href="#" class="hover:text-primary transition">About</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="font-bold text-light mb-4">Support</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-primary transition">Contact</a></li>
-                        <li><a href="#" class="hover:text-primary transition">FAQ</a></li>
-                        <li><a href="#" class="hover:text-primary transition">Returns</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="font-bold text-light mb-4">Follow Us</h3>
-                    <div class="flex gap-4">
-                        <a href="#" class="text-gray-400 hover:text-primary transition"><i class="fab fa-instagram text-xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-primary transition"><i class="fab fa-facebook text-xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-primary transition"><i class="fab fa-twitter text-xl"></i></a>
+
+
+            </div>
+
+
+
+
+
+
+
+            <!-- Product 2 -->
+            <div class="bg-white rounded-2xl shadow-md 
+                        overflow-hidden 
+                        hover:-translate-y-2 
+                        transition">
+
+
+                <img src="assets/img/product2.jpg"
+                     class="w-full h-60 object-cover"
+                     alt="Product">
+
+
+
+                <div class="p-5">
+
+
+                    <h3 class="font-semibold text-lg">
+
+                        Modern Product
+
+                    </h3>
+
+
+                    <p class="text-gray-500 text-sm mt-2">
+
+                        Desain modern dan elegan
+
+                    </p>
+
+
+
+                    <div class="mt-4 flex justify-between">
+
+
+                        <span class="text-blue-600 font-bold">
+
+                            Rp129.000
+
+                        </span>
+
+
+                        <a href="detail.html"
+                           class="text-blue-600 text-sm">
+
+                            Detail
+
+                        </a>
+
+
                     </div>
+
+
+
+                    <button
+                    class="mt-4 w-full
+                           bg-blue-600
+                           text-white
+                           py-2 rounded-xl">
+
+                        Tambah Keranjang
+
+                    </button>
+
+
                 </div>
+
+
             </div>
-            <div class="border-t border-secondary pt-8 text-center text-gray-400">
-                <p>&copy; 2024 MarrrGallery. All rights reserved.</p>
+
+
+
+
+
+
+
+            <!-- Product 3 -->
+            <div class="bg-white rounded-2xl shadow-md 
+                        overflow-hidden 
+                        hover:-translate-y-2 
+                        transition">
+
+
+                <img src="assets/img/product3.jpg"
+                     class="w-full h-60 object-cover"
+                     alt="Product">
+
+
+                <div class="p-5">
+
+
+                    <h3 class="font-semibold text-lg">
+
+                        Favorite Product
+
+                    </h3>
+
+
+                    <p class="text-gray-500 text-sm mt-2">
+
+                        Produk pilihan pelanggan
+
+                    </p>
+
+
+                    <div class="mt-4 flex justify-between">
+
+
+                        <span class="text-blue-600 font-bold">
+
+                            Rp149.000
+
+                        </span>
+
+
+                        <a href="detail.html"
+                           class="text-blue-600 text-sm">
+
+                            Detail
+
+                        </a>
+
+
+                    </div>
+
+
+
+                    <button
+                    class="mt-4 w-full
+                           bg-blue-600
+                           text-white
+                           py-2 rounded-xl">
+
+                        Tambah Keranjang
+
+                    </button>
+
+
+                </div>
+
+
             </div>
+
+
+
+
+
+
+
+
+            <!-- Product 4 -->
+            <div class="bg-white rounded-2xl shadow-md 
+                        overflow-hidden 
+                        hover:-translate-y-2 
+                        transition">
+
+
+                <img src="assets/img/product4.jpg"
+                     class="w-full h-60 object-cover"
+                     alt="Product">
+
+
+                <div class="p-5">
+
+
+                    <h3 class="font-semibold text-lg">
+
+                        New Collection
+
+                    </h3>
+
+
+                    <p class="text-gray-500 text-sm mt-2">
+
+                        Koleksi terbaru
+
+                    </p>
+
+
+                    <div class="mt-4 flex justify-between">
+
+
+                        <span class="text-blue-600 font-bold">
+
+                            Rp179.000
+
+                        </span>
+
+
+                        <a href="detail.html"
+                           class="text-blue-600 text-sm">
+
+                            Detail
+
+                        </a>
+
+
+                    </div>
+
+
+
+                    <button
+                    class="mt-4 w-full
+                           bg-blue-600
+                           text-white
+                           py-2 rounded-xl">
+
+                        Tambah Keranjang
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+
         </div>
-    </footer>
 
-    <script src="script.js"></script>
-    <script>
-        let currentFilter = 'all';
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const category = urlParams.get('category');
-            if (category) {
-                currentFilter = decodeURIComponent(category);
-                filterProducts(currentFilter);
-            } else {
-                filterProducts('all');
-            }
-            updateCartBadge();
-        });
+    </div>
 
-        function filterProducts(category) {
-            currentFilter = category;
-            
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
 
-            let filtered = category === 'all' ? products : products.filter(p => p.category === category);
+    </section>
+    <!-- Product 5 - 12 -->
+<section class="pb-16">
 
-            const grid = document.getElementById('productsGrid');
-            const emptyState = document.getElementById('emptyState');
+<div class="max-w-7xl mx-auto px-6">
 
-            if (filtered.length === 0) {
-                grid.innerHTML = '';
-                emptyState.classList.remove('hidden');
-            } else {
-                emptyState.classList.add('hidden');
-                grid.innerHTML = filtered.map(product => `
-                    <div class="card-hover">
-                        <img src="${product.image}" alt="${product.name}" class="w-full h-64 object-cover rounded mb-4">
-                        <h3 class="font-bold text-lg mb-2 text-light">${product.name}</h3>
-                        <p class="text-gray-400 text-sm mb-2">${product.category}</p>
-                        ${product.is_best_seller ? '<p class="text-primary text-sm font-bold mb-2">🌟 Best Seller</p>' : ''}
-                        ${product.is_new_arrival ? '<p class="text-green-400 text-sm font-bold mb-2">✨ New</p>' : ''}
-                        <p class="text-primary font-bold text-lg mb-4">Rp${formatPrice(product.price)}</p>
-                        <button onclick="goToDetail(${product.id})" class="bg-primary text-light w-full py-2 rounded font-semibold mb-2 hover:bg-red-700 transition text-sm">View Details</button>
-                        <button onclick="addToCart(${product.id})" class="border-2 border-primary text-primary w-full py-2 rounded font-semibold hover:bg-primary hover:text-light transition text-sm">Add to Cart</button>
-                    </div>
-                `).join('');
-            }
-        }
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
-        function formatPrice(price) {
-            return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-        }
 
-        function goToDetail(id) {
-            window.location.href = `detail.html?id=${id}`;
-        }
+<!-- Product 5 -->
+<div class="bg-white rounded-2xl shadow-md overflow-hidden hover:-translate-y-2 transition">
 
-        function addToCart(productId) {
-            const product = products.find(p => p.id === productId);
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const existingItem = cart.find(item => item.id === productId);
+<img src="assets/img/product5.jpg"
+class="w-full h-60 object-cover">
 
-            if (existingItem) {
-                existingItem.quantity++;
-            } else {
-                cart.push({ ...product, quantity: 1 });
-            }
+<div class="p-5">
 
-            localStorage.setItem('cart', JSON.stringify(cart));
-            updateCartBadge();
-            showNotification(`${product.name} added to cart!`);
-        }
+<h3 class="font-semibold text-lg">
+Smart Device
+</h3>
 
-        function updateCartBadge() {
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const count = cart.reduce((sum, item) => sum + item.quantity, 0);
-            document.getElementById('cartBadge').textContent = count;
-        }
+<p class="text-gray-500 text-sm mt-2">
+Teknologi terbaru untuk kebutuhan harian.
+</p>
 
-        function showNotification(message) {
-            const notification = document.createElement('div');
-            notification.className = 'fixed top-4 right-4 bg-green-500 text-light px-6 py-3 rounded shadow-lg z-50';
-            notification.textContent = message;
-            document.body.appendChild(notification);
-            setTimeout(() => notification.remove(), 3000);
-        }
-    </script>
+<div class="mt-4 flex justify-between">
+
+<span class="text-blue-600 font-bold">
+Rp199.000
+</span>
+
+<a href="detail.html"
+class="text-blue-600 text-sm">
+Detail
+</a>
+
+</div>
+
+<button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-xl">
+Tambah Keranjang
+</button>
+
+</div>
+
+</div>
+
+
+
+
+<!-- Product 6 -->
+<div class="bg-white rounded-2xl shadow-md overflow-hidden hover:-translate-y-2 transition">
+
+<img src="assets/img/product6.jpg"
+class="w-full h-60 object-cover">
+
+<div class="p-5">
+
+<h3 class="font-semibold text-lg">
+Classic Style
+</h3>
+
+<p class="text-gray-500 text-sm mt-2">
+Desain klasik yang elegan.
+</p>
+
+<div class="mt-4 flex justify-between">
+
+<span class="text-blue-600 font-bold">
+Rp219.000
+</span>
+
+<a href="detail.html"
+class="text-blue-600 text-sm">
+Detail
+</a>
+
+</div>
+
+<button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-xl">
+Tambah Keranjang
+</button>
+
+</div>
+
+</div>
+
+
+
+
+
+<!-- Product 7 -->
+<div class="bg-white rounded-2xl shadow-md overflow-hidden hover:-translate-y-2 transition">
+
+<img src="assets/img/product7.jpg"
+class="w-full h-60 object-cover">
+
+<div class="p-5">
+
+<h3 class="font-semibold text-lg">
+Premium Item
+</h3>
+
+<p class="text-gray-500 text-sm mt-2">
+Kualitas terbaik pilihan kami.
+</p>
+
+<div class="mt-4 flex justify-between">
+
+<span class="text-blue-600 font-bold">
+Rp249.000
+</span>
+
+<a href="detail.html"
+class="text-blue-600 text-sm">
+Detail
+</a>
+
+</div>
+
+<button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-xl">
+Tambah Keranjang
+</button>
+
+</div>
+
+</div>
+
+
+
+
+
+<!-- Product 8 -->
+<div class="bg-white rounded-2xl shadow-md overflow-hidden hover:-translate-y-2 transition">
+
+<img src="assets/img/product8.jpg"
+class="w-full h-60 object-cover">
+
+<div class="p-5">
+
+<h3 class="font-semibold text-lg">
+Exclusive Product
+</h3>
+
+<p class="text-gray-500 text-sm mt-2">
+Produk edisi terbatas.
+</p>
+
+<div class="mt-4 flex justify-between">
+
+<span class="text-blue-600 font-bold">
+Rp299.000
+</span>
+
+<a href="detail.html"
+class="text-blue-600 text-sm">
+Detail
+</a>
+
+</div>
+
+<button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-xl">
+Tambah Keranjang
+</button>
+
+</div>
+
+</div>
+
+
+
+
+<!-- Product 9 -->
+<div class="bg-white rounded-2xl shadow-md overflow-hidden hover:-translate-y-2 transition">
+
+<img src="assets/img/product9.jpg"
+class="w-full h-60 object-cover">
+
+<div class="p-5">
+
+<h3 class="font-semibold text-lg">
+Daily Product
+</h3>
+
+<p class="text-gray-500 text-sm mt-2">
+Cocok digunakan setiap hari.
+</p>
+
+<div class="mt-4 flex justify-between">
+
+<span class="text-blue-600 font-bold">
+Rp89.000
+</span>
+
+<a href="detail.html"
+class="text-blue-600 text-sm">
+Detail
+</a>
+
+</div>
+
+<button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-xl">
+Tambah Keranjang
+</button>
+
+</div>
+
+</div>
+
+
+
+
+
+<!-- Product 10 -->
+<div class="bg-white rounded-2xl shadow-md overflow-hidden hover:-translate-y-2 transition">
+
+<img src="assets/img/product10.jpg"
+class="w-full h-60 object-cover">
+
+<div class="p-5">
+
+<h3 class="font-semibold text-lg">
+Modern Choice
+</h3>
+
+<p class="text-gray-500 text-sm mt-2">
+Pilihan terbaik pelanggan.
+</p>
+
+<div class="mt-4 flex justify-between">
+
+<span class="text-blue-600 font-bold">
+Rp159.000
+</span>
+
+<a href="detail.html"
+class="text-blue-600 text-sm">
+Detail
+</a>
+
+</div>
+
+<button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-xl">
+Tambah Keranjang
+</button>
+
+</div>
+
+</div>
+
+
+
+
+
+<!-- Product 11 -->
+<div class="bg-white rounded-2xl shadow-md overflow-hidden hover:-translate-y-2 transition">
+
+<img src="assets/img/product11.jpg"
+class="w-full h-60 object-cover">
+
+<div class="p-5">
+
+<h3 class="font-semibold text-lg">
+Best Seller
+</h3>
+
+<p class="text-gray-500 text-sm mt-2">
+Produk paling banyak dicari.
+</p>
+
+<div class="mt-4 flex justify-between">
+
+<span class="text-blue-600 font-bold">
+Rp189.000
+</span>
+
+<a href="detail.html"
+class="text-blue-600 text-sm">
+Detail
+</a>
+
+</div>
+
+<button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-xl">
+Tambah Keranjang
+</button>
+
+</div>
+
+</div>
+
+
+
+
+
+<!-- Product 12 -->
+<div class="bg-white rounded-2xl shadow-md overflow-hidden hover:-translate-y-2 transition">
+
+<img src="assets/img/product12.jpg"
+class="w-full h-60 object-cover">
+
+<div class="p-5">
+
+<h3 class="font-semibold text-lg">
+Latest Product
+</h3>
+
+<p class="text-gray-500 text-sm mt-2">
+Produk terbaru kami.
+</p>
+
+<div class="mt-4 flex justify-between">
+
+<span class="text-blue-600 font-bold">
+Rp329.000
+</span>
+
+<a href="detail.html"
+class="text-blue-600 text-sm">
+Detail
+</a>
+
+</div>
+
+<button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-xl">
+Tambah Keranjang
+</button>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- Pagination -->
+<section class="pb-16">
+
+<div class="flex justify-center gap-3">
+
+
+<button class="px-4 py-2 rounded-lg bg-blue-600 text-white">
+1
+</button>
+
+<button class="px-4 py-2 rounded-lg bg-white shadow">
+2
+</button>
+
+<button class="px-4 py-2 rounded-lg bg-white shadow">
+3
+</button>
+
+<button class="px-4 py-2 rounded-lg bg-white shadow">
+Next
+</button>
+
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-gray-300 py-10">
+
+<div class="max-w-7xl mx-auto px-6">
+
+
+<div class="grid md:grid-cols-4 gap-8">
+
+
+<div>
+<h3 class="text-white text-xl font-bold">
+BrandStore
+</h3>
+
+<p class="mt-3 text-sm">
+Belanja mudah dengan produk berkualitas.
+</p>
+</div>
+
+
+
+<div>
+<h4 class="text-white font-semibold">
+Menu
+</h4>
+
+<ul class="mt-3 space-y-2 text-sm">
+
+<li>Home</li>
+<li>Products</li>
+<li>Cart</li>
+
+</ul>
+
+</div>
+
+
+
+<div>
+<h4 class="text-white font-semibold">
+Support
+</h4>
+
+<ul class="mt-3 space-y-2 text-sm">
+
+<li>FAQ</li>
+<li>Shipping</li>
+<li>Contact</li>
+
+</ul>
+
+</div>
+
+
+
+<div>
+<h4 class="text-white font-semibold">
+Follow Us
+</h4>
+
+<p class="mt-3 text-sm">
+Instagram<br>
+Facebook<br>
+WhatsApp
+</p>
+
+</div>
+
+
+</div>
+
+
+
+<div class="border-t border-gray-700 mt-8 pt-5 text-center text-sm">
+
+© 2026 BrandStore. All Rights Reserved.
+
+</div>
+
+
+</div>
+
+</footer>
+
+
+
+
+
+<script>
+
+const menuBtn = document.getElementById("menu-btn");
+const mobileMenu = document.getElementById("mobile-menu");
+
+
+if(menuBtn){
+
+menuBtn.addEventListener("click",()=>{
+
+mobileMenu.classList.toggle("hidden");
+
+});
+
+}
+
+
+</script>
+
+
 </body>
-</html>
+
+    </html>
